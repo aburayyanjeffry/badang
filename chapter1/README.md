@@ -28,5 +28,6 @@ There are 3 choices for the alternative editor (providing /usr/bin/editor).
 sudo visudo
 # User privilege specification
 root ALL=(ALL:ALL) ALL
-jeffry ALL=(ALL:ALL) ALL
+jeffry  ALL=(ALL:ALL) NOPASSWD: ALL
 ```
+*** TODO: The passwordless is not working. To be fixed ***
