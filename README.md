@@ -1,5 +1,5 @@
 # badang
-<img src="img/badang.png" alt="Description of the image" width="500"/>
+<img src="img/badang.jpeg" alt="Description of the image" width="500"/>
 This journal chronicles the journey of a broken laptop given a second chance as a home laboratory. The laptop's hostname is badang, inspired by the mythical Malay character who gained extraordinary strength after drinking ghost vomit, symbolizing its transformation and new purpose.
 
 # Table of Contents
