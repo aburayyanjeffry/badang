@@ -22,7 +22,7 @@ There are 3 choices for the alternative editor (providing /usr/bin/editor).
 
 ## 3. Make the sudo passwordless
 ```
-sudo visdo
+sudo visudo
 # User privilege specification
 root ALL=(ALL:ALL) ALL
 jeffry ALL=(ALL:ALL) ALL
