@@ -1,4 +1,7 @@
 # Chapter 1
+<div style="text-align: center;">
+  <img src="../img/chap1-laptop.jpeg" alt="Description of the image" width="500"/>
+</div>
  This fresh install is not up to my baseline. I need to do this straight away after the install…
 
 ## 1. Install SSH Server
