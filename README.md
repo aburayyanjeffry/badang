@@ -7,10 +7,10 @@ This journal chronicles the journey of a broken laptop given a second chance as 
 # Table of Contents
 
 1. [Introduction](#introduction)
-2. [Chapter 1: Setting Up](./chapter1/README.md)
-3. [Chapter 2: Installing Software](./chapter2/README.md)
-4. [Chapter 3: Network Configuration](./chapter3/README.md)
-5. [Chapter 4: Security Enhancements](./chapter4/README.md)
+2. [Chapter 1: The Post Natal](./chapter1/README.md)
+3. [Chapter 2: The Newborn Romper]./chapter2/README.md
+4. [Chapter 3: TBA ]./chapter3/README.md
+5. [Chapter 4: TBA ]./chapter4/README.md
 6. [Conclusion](#conclusion)
 
 ## Introduction
