@@ -24,10 +24,12 @@ There are 3 choices for the alternative editor (providing /usr/bin/editor).
 ```
 
 ## 3. Make the sudo passwordless
+Open visudo
 ```
 sudo visudo
-# User privilege specification
-root ALL=(ALL:ALL) ALL
+```
+
+Enter this line. It's important to ensure that the user NOPASSWD rule is placed at the bottom of the sudoers file, as any conflicting rules below it might override this setting.
+```
 jeffry  ALL=(ALL:ALL) NOPASSWD: ALL
 ```
-*** TODO: The passwordless is not working. To be fixed ***
