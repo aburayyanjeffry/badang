@@ -47,14 +47,18 @@ if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
    source /usr/share/powerline/bindings/bash/powerline.sh
 fi
 ```
-***TODO: The arrow symbol from the powerline fonts is not working. To be fixed***
+
+After that you need to make your terminal application to aware of the powerline font ands symbols. I'm using iTerm2 at Mac and this is how you set it up.
+<div style="text-align: center;">
+  <img src="/img/chap2-iterm2.png" alt="Description of the image" width="500"/>
+</div>
 
 ## 5. The 'Clamshell' mode
 <div style="text-align: center;">
   <img src="/img/chap2-clamshell.png" alt="Description of the image" width="500"/>
 </div>
 
-This is the mode where you still can use the laptop while the screen is closed. To do this set it to edit this config
+This mode allows you to use the laptop while the screen lid is closed. To enable this, edit the configuration settings.
 ```
 sudo vi /etc/systemd/logind.conf
 ```
