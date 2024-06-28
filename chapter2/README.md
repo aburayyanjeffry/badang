@@ -36,7 +36,7 @@ screenfetch
 ```
 
 ## 4. The 1337 prompt 
-powerline is the beautiful prompts that make you like an Linux elite. Install it by the following command:
+powerline is the beautiful prompts that make you look like a Linux elite. Install it by the following command:
 ```
 sudo apt install powerline fonts-powerline 
 ```
@@ -53,7 +53,7 @@ fi
 <div style="text-align: center;">
   <img src="/img/chap2-clamshell.png" alt="Description of the image" width="500"/>
 </div>
-This is the mode where you still can use the laptop while the screen is closed. To do this set it to edit this config:
+This is the mode where you still can use the laptop while the screen is closed. To do this set it to edit this config
 ```
 sudo vi /etc/systemd/logind.conf
 ```
