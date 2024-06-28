@@ -1,4 +1,4 @@
-# Chapter 2
+# Chapter 3
 <div style="text-align: center;">
   <img src="/img/chap3-docker.png" alt="Description of the image" width="500"/>
 </div>
