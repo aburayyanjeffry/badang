@@ -1,6 +1,6 @@
 # Chapter 2
 <div style="text-align: center;">
-  <img src="/img/chap2-terminal.jpeg" alt="Description of the image" width="500"/>
+  <img src="/img/chap2-terminal.png" alt="Description of the image" width="500"/>
 </div>
 This chapter is to dandified the terminal look and feel
 
@@ -50,6 +50,9 @@ fi
 ***TODO: The arrow symbol from the powerline fonts is not working. To be fixed***
 
 ## 5. The 'Clamshell' mode
+<div style="text-align: center;">
+  <img src="/img/chap2-clamshell.png" alt="Description of the image" width="500"/>
+</div>
 This is the mode where you still can use the laptop while the screen is closed. To do this set it to edit this config:
 ```
 sudo vi /etc/systemd/logind.conf
@@ -64,5 +67,6 @@ And restart the service
 ```
 sudo systemctl restart systemd-logind
 ```
+
 
 
