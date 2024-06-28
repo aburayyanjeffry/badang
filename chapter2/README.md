@@ -53,6 +53,7 @@ fi
 <div style="text-align: center;">
   <img src="/img/chap2-clamshell.png" alt="Description of the image" width="500"/>
 </div>
+
 This is the mode where you still can use the laptop while the screen is closed. To do this set it to edit this config
 ```
 sudo vi /etc/systemd/logind.conf
