@@ -36,7 +36,7 @@ screenfetch
 ```
 
 ## 4. The 1337 prompt 
-powerline is the beautiful prompts that make you look like a Linux elite. Install it by the following command:
+Powerline is the beautiful prompts that make you look like a Linux elite. Install it by the following command:
 ```
 sudo apt install powerline fonts-powerline 
 ```
@@ -47,8 +47,7 @@ if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
    source /usr/share/powerline/bindings/bash/powerline.sh
 fi
 ```
-
-After that you need to make your terminal application to aware of the powerline font ands symbols. I'm using iTerm2 at Mac and this is how you set it up.
+After that, you need to make your terminal application aware of the Powerline fonts and symbols. I'm using iTerm2 on a Mac, here’s how to I set it up
 <div style="text-align: center;">
   <img src="/img/chap2-iterm2.png" alt="Description of the image" width="500"/>
 </div>
