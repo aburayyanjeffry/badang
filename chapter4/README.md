@@ -1,6 +1,6 @@
 # Chapter 4
 <div style="text-align: center;">
-  <img src="/img/chap3-docker.png" alt="Description of the image" width="500"/>
+  <img src="/img/chap4-microk8s.png" alt="Description of the image" width="500"/>
 </div>
 Badang's first love is Kubernetes (pronounced as "Kates"), often abbreviated as k8s. It surprised me how easy it is to get k8s running on Ubuntu with just a one-liner! The type of k8s used for the local install is microk8s.
 
@@ -14,7 +14,7 @@ sudo snap install microk8s --classic
 sudo microk8s status --wait-ready
 ```
 <div style="text-align: center;">
-  <img src="/img/chap4-k8s-status.png img" alt="Description of the image" width="500"/>
+  <img src="/img/chap4-k8s-status.png" alt="Description of the image" width="500"/>
 </div>
 
 ## 3. Set the kubeclt alias 
@@ -28,7 +28,7 @@ Relogin to make it take effect and issue the following command to list all resou
 k get all -A
 ```
 <div style="text-align: center;">
-  <img src="/img/chap4-k-get-all.png img" alt="Description of the image" width="500"/>
+  <img src="/img/chap4-k-get-all.png" alt="Description of the image" width="500"/>
 </div>
 
 
