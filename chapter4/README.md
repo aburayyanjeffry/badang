@@ -32,17 +32,40 @@ k get all -A
 </div>
 
 
-## 5. Enable normal user to execute Docker commands
-Add the current user to `docker` group. Relogin and try to run "Hello World" container to verify.
+## 5. Lets deploy nginx
+Create an nginx deployment
 ```
-sudo usermod -aG docker $USER
-```
-
-## 6. Make Docker to start on boot
-```
-sudo systemctl enable docker.service
-sudo systemctl enable containerd.service
+k create deployment mynginx --image=nginx
 ```
 
+Issue the following command to list all resources in the current namespace and ensure the nginx pod is running. Please note that this process may take 30 seconds or more, depending on your machine's capabilities. You may need to execute this command multiple times until you observe the nginx pod running.
+```
+k get all 
+```
+<div style="text-align: center;">
+  <img src="/img/chap4-nginx-pod.png" alt="Description of the image" width="500"/>
+</div>
+
+## 6. Lets expose the nginx.
+To expose the nginx deployment to the outside world, we need to create a Kubernetes service using NodePort. Execute the following command to create the NodePort service
+```
+k expose deployment mynginx --type=NodePort --port=80 --name=mynginx-service
+```
+
+Next, list the services to retrieve the exposed port
+```
+k get service
+```
+
+From the output, you can identify the port at which the service is exposed.
+<div style="text-align: center;">
+  <img src="/img/chap4-nodepod.png" alt="Description of the image" width="500"/>
+</div>
+
+
+You can now access the nginx service in your browser using the external IP and the identified port.
+<div style="text-align: center;">
+  <img src="/img/chap4-browser.png" alt="Description of the image" width="500"/>
+</div>
 
 
