@@ -51,13 +51,13 @@ By doing this we will get a NodePort service for Grafana. We need to identified 
 ## 6. Access it!
 We can access Grafana at the host ip and the expose port. The defaut user and password is define in the helm chart. (admin/prom-operator)
 <div style="text-align: center;">
-  <img src="/img/chap5-Grafana-login.png" alt="Description of the image" width="500"/>
+  <img src="/img/chap5-grafana-login.png" alt="Description of the image" width="500"/>
 </div>
 
 
 You can now access the Grafana dashboard
 <div style="text-align: center;">
-  <img src="/img/chap4-node.png" alt="Description of the image" width="500"/>
+  <img src="/img/chap5-node.png" alt="Description of the image" width="500"/>
 </div>
 
 
