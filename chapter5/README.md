@@ -2,8 +2,7 @@
 <div style="text-align: center;">
   <img src="/img/chap5-helm.png" alt="Description of the image" width="500"/>
 </div>
-In this chapter, we will explore how to use Helm to install the Prometheus-Grafana stack. Helm serves as the package manager for Kubernetes, much like apt does for Ubuntu. The Prometheus-Grafana stack is a powerful set of tools designed to monitor both applications and Kubernetes nodes.
-
+In this chapter, we will explore how to use Helm to install the Prometheus-Grafana stack. Helm serves as the package manager for Kubernetes, much like apt does for Ubuntu. The Prometheus-Grafana stack is a powerful set of tools designed to monitor both applications and Kubernetes nodes. Please take note that you can enable prometheus by mickrok8s command too.  
 ## 1. Ensure that MicroK8s is running with Helm 3 enabled.
 ```
 sudo microk8s status
