@@ -44,3 +44,64 @@ echo "alias k=kubectl" >> ~/.bashrc
 echo "complete -o default -F __start_kubectl k" >> ~/.bashrc
 sourch ~/.bashrc
 ```
+
+Enable RBAC at mickrok8s
+```
+microk8s enable rbac
+```
+
+Create namespaces named lab01 and lab02
+```
+k create namespace lab01
+k create namespace lab02
+```
+
+Kubernetes does not manage user and user credentials. We need to create manually. One of the way is to create it by using openssl.
+```
+export USER=user01
+openssl genrsa -out $USER.key 2048
+openssl req -new -key $USER.key -out $USER.csr -subj "/CN=$USER"
+openssl x509 -req -in $USER.csr -CA /var/snap/microk8s/current/certs/ca.crt -CAkey /var/snap/microk8s/current/certs/ca.key -CAcreateserial -out $USER.crt -days 999
+```
+
+Create the kubeconfig for the user
+```
+kubectl config set-cluster microk8s-cluster --server=https://127.0.0.1:16443 --certificate-authority=/var/snap/microk8s/current/certs/ca.crt
+kubectl config set-credentials $USER --client-certificate=$USER --client-key=$USER.key
+```
+
+
+
+Create the rolebinding-lab01-admin.yaml file. This is a manifest file to bind the cluster-admin role to the user user01 for the namespace lab01.
+```
+cat <<EOF > rolebinding-lab01-admin.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: admin-rolebinding
+  namespace: lab01
+subjects:
+- kind: User
+  name: user01
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: admin
+  apiGroup: rbac.authorization.k8s.io
+EOF
+```
+
+Apply the manifest file to put it into effect:
+```
+kubectl apply -f rolebinding-lab01-admin.yaml
+```
+
+Check the available context
+```
+kubectl config get-contexts 
+```
+
+User the user01 context
+```
+kubectl config use-context user01 
+```
