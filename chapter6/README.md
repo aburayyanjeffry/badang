@@ -1,6 +1,6 @@
 # Chapter 6
 <div style="text-align: center;">
-  <img src="/img/chap5-helm.png" alt="Description of the image" width="500"/>
+  <img src="/img/chap6-rbac.png" alt="Description of the image" width="500"/>
 </div>
 In this chapter, we will cover Kubernetes Role-Based Access Control (RBAC).
 
@@ -11,9 +11,6 @@ First, check the cluster version:
 ```
 k version
 ```
-<div style="text-align: center;">
-  <img src="/img/chap5-status.png" alt="Description of the image" width="500"/>
-</div>
 
 Next, download and install the appropriate kubectl version that matches your server:
 ```
@@ -75,7 +72,6 @@ Now list the available contexts. We should see the new context
 ```
 k config get-contexts
 ```
-
 
 
 Create the rolebinding-lab01-admin.yaml file. This is a manifest file to bind the cluster-admin role to the user user01 for the namespace lab01.
