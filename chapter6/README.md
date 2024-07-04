@@ -1,8 +1,8 @@
 # Chapter 6
 <div style="text-align: center;">
-  <img src="/img/chap6-rbac.png" alt="Description of the image" width="500"/>
+  <img src="/img/chap6-rbac.png" alt="Description of the image" width="700"/>
 </div>
-In this chapter, we will cover Kubernetes Role-Based Access Control (RBAC).
+In this chapter, we will cover Kubernetes Role-Based Access Control (RBAC). RBAC in Kubernetes is a method for managing permissions within a cluster by defining roles and associating (role binding) them with users, service accounts, and groups. Permissions are built upon Kubernetes resources and the actions that can be performed on them, which are called verbs in Kubernetes.
 
 ## 1. Download the Correct kubectl version
 The kubectl version that comes with MicroK8s has cluster admin privileges. To operate with a non-admin role, we need a version of kubectl that supports customizable kubeconfig files.
