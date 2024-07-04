@@ -103,14 +103,17 @@ User the user01 context
 k config use-context user01 
 ```
 
-Let's deploy an Nginx server to lab01 and lab02. You should be able to deploy to lab01 because we have already assigned the cluster admin role to the user for lab01. However, the deployment to lab02 will fail because the user doesn't have any role in this namespace.
-``
+Let's deploy an Nginx server to lab01 and lab02. You should be able to deploy to lab01 because we have already assigned the cluster admin role to the user for lab01. However, the deployment to lab02 will fail because the user doesn't have any role in this namespace:
+```
 k create deployment mynginx --image=nginx -n lab01
 k create deployment mynginx --image=nginx -n lab02
 ```
+<div style="text-align: center;">
+  <img src="/img/chap6-ns.png" alt="Description of the image" width="500"/>
+</div>
 
-Execute this to reset back the kubeconfig
+Execute this to reset back the microk8s cluster admin user:
 ```
-sudo microk8s config > .kube/config
+k config use-context microk8s
 ```
 
