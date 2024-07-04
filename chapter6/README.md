@@ -26,10 +26,9 @@ chmod +x ~/bin/kubectl
 
 Then, generate the kubeconfig file:
 ```
-cd $HOME
+cd 
 mkdir .kube
-cd .kube
-sudo microk8s config > config
+sudo microk8s config > .kube/config
 ```
 
 After generating the kubeconfig, attempt to use the host's kubectl version:
@@ -37,7 +36,7 @@ After generating the kubeconfig, attempt to use the host's kubectl version:
 kubectl get all
 ```
 
-To simplify usage, set up a shortcut alias and enable bash completion. *Note: We will alias MicroK8s's kubectl to 'mk' and the host's kubectl to 'k':*
+To simplify usage, set up a shortcut alias and enable bash completion. **Note: We will alias MicroK8s's kubectl to 'mk' and the host's kubectl to 'k':**
 ```
 echo "source <(kubectl completion bash)" >> ~/.bashrc
 echo "alias k=kubectl" >> ~/.bashrc
@@ -50,24 +49,31 @@ Enable RBAC at mickrok8s
 microk8s enable rbac
 ```
 
-Create namespaces named lab01 and lab02
+Create namespaces named `lab01` and `lab02`
 ```
 k create namespace lab01
 k create namespace lab02
 ```
 
-Kubernetes does not manage user and user credentials. We need to create manually. One of the way is to create it by using openssl.
+Kubernetes does not manage user and user credentials. We need to create manually. One of the way is to create it by using openssl. In this example the user name is `user01`. The current user need to be added  to `microk8s` group because it need to access its CA cert.
 ```
-export USER=user01
-openssl genrsa -out $USER.key 2048
-openssl req -new -key $USER.key -out $USER.csr -subj "/CN=$USER"
-openssl x509 -req -in $USER.csr -CA /var/snap/microk8s/current/certs/ca.crt -CAkey /var/snap/microk8s/current/certs/ca.key -CAcreateserial -out $USER.crt -days 999
+sudo usermod -aG microk8s $USER
+export K8SUSER=user01
+openssl genrsa -out $K8SUSER.key 2048
+openssl req -new -key $K8SUSER.key -out $K8SUSER.csr -subj "/CN=$K8SUSER"
+openssl x509 -req -in $K8SUSER.csr -CA /var/snap/microk8s/current/certs/ca.crt -CAkey /var/snap/microk8s/current/certs/ca.key -CAcreateserial -out $K8SUSER.crt -days 9999
 ```
 
-Create the kubeconfig for the user
+Create the user context in the kubeconfig. In this example the user01 context is named `user01 and having `lab01` as the default namespace.
 ```
-kubectl config set-cluster microk8s-cluster --server=https://127.0.0.1:16443 --certificate-authority=/var/snap/microk8s/current/certs/ca.crt
-kubectl config set-credentials $USER --client-certificate=$USER --client-key=$USER.key
+k config set-cluster microk8s-cluster --server=https://127.0.0.1:16443 --certificate-authority=/var/snap/microk8s/current/certs/ca.crt
+k config set-credentials $K8SUSER --client-certificate=$K8SUSER.crt --client-key=$K8SUSER.key
+k config set-context $K8SUSER --cluster=microk8s-cluster --user=$K8SUSER --namespace=lab01
+```
+
+Now list the available contexts. We should see the new context
+```
+k config get-contexts
 ```
 
 
@@ -93,15 +99,22 @@ EOF
 
 Apply the manifest file to put it into effect:
 ```
-kubectl apply -f rolebinding-lab01-admin.yaml
-```
-
-Check the available context
-```
-kubectl config get-contexts 
+k apply -f rolebinding-lab01-admin.yaml
 ```
 
 User the user01 context
 ```
-kubectl config use-context user01 
+k config use-context user01 
 ```
+
+Let's deploy an Nginx server to lab01 and lab02. You should be able to deploy to lab01 because we have already assigned the cluster admin role to the user for lab01. However, the deployment to lab02 will fail because the user doesn't have any role in this namespace.
+``
+k create deployment mynginx --image=nginx -n lab01
+k create deployment mynginx --image=nginx -n lab02
+```
+
+Execute this to reset back the kubeconfig
+```
+sudo microk8s config > .kube/config
+```
+
