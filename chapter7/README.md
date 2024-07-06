@@ -4,6 +4,7 @@
 </div>
 Typically, when we want to expose a service in our home lab, we need to know our home router's public IP and port map the service to the backend computer. The problem is that most home internet connections have a dynamic IP, making it troublesome to have stable access.
 
+
 Another solution is to use Cloudflare Tunnel. To use this, you need a Cloudflare account and a paid domain from Cloudflare, ranging from USD 7 to USD 20+ per year. That's all there is to it. With that minimal cost, you can serve your service from home! For this chapter, I will share how I expose a wiki on Badang using a Cloudflare Tunnel.
 
 
