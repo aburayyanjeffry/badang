@@ -11,7 +11,7 @@ In this chapter, we will cover Kubernetes Role-Based Access Control (RBAC). RBAC
 
 ## 2. Set the home serive
 <div style="text-align: center;">
-  <img src="/img/chap7-03-cf-tunnel.png" alt="Description of the image" width="700"/>
+  <img src="/img/chap7-04-cf-tunnel.png" alt="Description of the image" width="700"/>
 </div>
 
 ## 3. Set the home serive
