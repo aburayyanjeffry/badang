@@ -15,13 +15,13 @@ I'm running a wikimedia on Docker. It is exposing the service at the http://loca
   <img src="/img/chap7-02-term.png" alt="Description of the image" width="700"/>
 </div>
 
-## 1. Set the tunnel at Cloudflare 
+## 2. Set the tunnel at Cloudflare 
 Go to `Zero Trust` and just follow through. 
 <div style="text-align: center;">
   <img src="/img/chap7-03-cf-tunnel.png" alt="Description of the image" width="700"/>
 </div>
 
-## 2. Set the domain and the backend service
+## 3. Set the domain and the backend service
 Select the desired domain and configure the backend service. Follow the clicks until the end.
 <div style="text-align: center;">
   <img src="/img/chap7-04-cf-tunnel.png" alt="Description of the image" width="700"/>
