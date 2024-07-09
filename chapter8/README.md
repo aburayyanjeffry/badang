@@ -6,7 +6,7 @@ Sometimes there is a need to get into the OS window manager. In this chapter we 
 
 
 ## 1. Enable the Remote Desktop service at Ubuntu
-Go to Settings -> Remote Desktop
+Go to Settings -> System -> Remote Desktop
 <div style="text-align: center;">
   <img src="/img/chap8-01-sys.png" alt="Description of the image" width="700"/>
 </div>
