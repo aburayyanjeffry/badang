@@ -1,6 +1,6 @@
-# Chapter 7
+# Chapter 8
 <div style="text-align: center;">
-  <img src="/img/chap7-01-cf.png" alt="Description of the image" width="700"/>
+  <img src="/img/chap8-00.png" alt="Description of the image" width="700"/>
 </div>
 Sometimes there is a need to get into the OS window manager. In this chapter we going to see how to remote desktop to Ubuntu
 
@@ -24,7 +24,7 @@ brew install --cask microsoft-remote-desktop
 ```
 
 ## 3. Just do it
-Fire up the application, fill in the ip, user, password and you are all set.
+Fire up the application and cliek Add PC. Then just fill in the ip, user, password and you are all set.
 <div style="text-align: center;">
   <img src="/img/chap8-03-rdp.png" alt="Description of the image" width="700"/>
 </div>
